@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loan Department">
+	<listeners>
+		<listener class-name="test.Listeners" />
+	</listeners>
+	<parameter name="URL" value="suiteparam.com" />
+
+	<test name="Personal loan">
+		<parameter name="URL" value="testparam.com" />
+		<classes>
+			<class name="test.day1"/>
+			<class name="test.day2" />
+			<class name="test.day4" />
+		</classes>
+	</test>
+
+	<test name="Car Loan">
+		<classes>
+			<class name="test.day3">
+				<parameter name="URL" value="carloan.com" />
+				<parameter name="APIKey/usrname" value="123456" />
+
+				<methods>
+					<exclude name="API.*" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite> 
